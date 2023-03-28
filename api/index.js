@@ -17,15 +17,24 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+// const server = require("./src/app.js");
+// const { conn } = require("./src/db.js");
 
-const PORT = process.env.PORT || 3001;
+// // Sincronizando todos los modelos a la vez.
+// conn.sync({ force: true }).then(() => {
+//     server.listen(process.env.PORT, () => {	
+//         console.log(`Servidor escuchando en el puerto ${process.env.PORT}`); // Imprimir el mensaje con el puerto correspondiente
+//     });
+// });
+const server = require("./src/app.js");
+const { conn } = require("./src/db.js");
 
-// Syncing all the models at once.
+const PORT = process.env.PORT || 3001; // Establecer un puerto por defecto
+
+// Sincronizando todos los modelos a la vez.
 
 conn.sync({ force: true }).then(() => {
-  server.listen(PORT, () => {	
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
+    server.listen(PORT, () => {	
+        console.log(`Servidor SE escucha en el puerto ${PORT}`);
+    });
 });
