@@ -1,6 +1,7 @@
 const axios = require("axios");
 const { Pokemon, Type } = require("../db");
 /** Haciendo una peticion usando limit */
+
 const url = "https://pokeapi.co/api/v2/pokemon?limit=70";
 
 const getAllPokemonsApi = () => {
@@ -66,6 +67,7 @@ const getAllPokemonsInfoDb = async () => {
 };
 
 const getAllPokemons = async () => {
+	
 	try {
 		const dataApi = await getAllPokemonsInfoApi();
 		const dataDb = await getAllPokemonsInfoDb();

@@ -98,6 +98,13 @@ export function filterByStrength(payload) {
 	};
 }
 
+export function filterBySpeed(payload) {
+	return {
+		type: "FILTER_BY_SPEED",
+		payload,
+	};
+}
+
 export function filterByCreated(payload) {
 	return {
 		type: "FILTER_BY_CREATED",

@@ -130,6 +130,36 @@ function rootReducer(state = initialState, action) {
 				pokemonsList: currentPokemons2,
 			};
 
+			case "FILTER_BY_SPEED":
+			const currentPokemons4 = [...state.pokemonsList];
+			if (action.payload === "default") {
+				currentPokemons4.sort((obj1, obj2) => {
+					if (obj1.id < obj2.id) {
+						return -1;
+					} else {
+						return 1;
+					}
+				});
+			}
+			if (action.payload === "fastest") {
+				currentPokemons4.sort((obj1, obj2) => {
+					if (obj1.speed < obj2.speed) {
+						return 1;
+					} else if (obj1.speed > obj2.speed) {
+						return -1;
+					} else {
+						return 0;
+					}
+				});
+			}
+					return {
+				...state,
+				pokemonsList: currentPokemons4,
+			};
+
+
+
+
 		case "FILTER_BY_CREATED":
 			const currentPokemons3 = [...state.allPokemonsList];
 			if (action.payload === "existing") {

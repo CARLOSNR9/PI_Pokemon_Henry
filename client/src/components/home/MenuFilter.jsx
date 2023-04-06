@@ -36,6 +36,11 @@ const MenuFilter = ({ setCurrentPage }) => {
 		setCurrentPage(() => 1);
 	};
 
+
+
+
+
+
 	const handlerFilterByCreated = (e) => {
 		e.preventDefault();
 		dispatch(filterByCreated(e.target.value));
@@ -83,6 +88,8 @@ const MenuFilter = ({ setCurrentPage }) => {
 					<option value='weaker'>weaker</option>
 				</select>
 			</div>
+
+		
 		</div>
 	);
 };
